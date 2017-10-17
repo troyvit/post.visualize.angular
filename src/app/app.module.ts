@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CoreModule } from './core/core.module';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -20,6 +21,9 @@ import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 
+import { environment } from '../environments/environment';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
   authDomain: "angular-tour-of-heroes-c1e0d.firebaseapp.com",
@@ -36,7 +40,8 @@ export const firebaseConfig = {
     AppRoutingModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 }),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    CoreModule,
   ],
   declarations: [
     AppComponent,
@@ -48,6 +53,7 @@ export const firebaseConfig = {
     EmailComponent,
     SignupComponent,
     MembersComponent,
+    UserProfileComponent,
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
