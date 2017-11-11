@@ -14,32 +14,16 @@ export class LoginComponent implements OnInit {
     if (auth.user){
       console.log("you're already logged in!", auth.user)
     }
-    else{auth.googleLogin()}
 
   }
 
-  // loginFb() {
-  //   this.afAuth.login{
-  //     provider: AuthProviders.Facebook,
-  //     method: AuthMethods.Popup,
-  //   }).then(
-  //       (success) => {
-  //       this.router.navigate(['/members']);
-  //     }).catch(
-  //       (err) => {
-  //       this.error = err;
-  //     })
-  // }
+  loginGoogle() {
+    this.auth.googleLogin()
+  }
 
-  // loginGoogle() {
-  //   this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider().then(
-  //       (success) => {
-  //       this.router.navigate(['/members']);
-  //     }).catch(
-  //       (err) => {
-  //       this.error = err;
-  //     })
-  // }
+  l() {
+
+  }
 
 
   ngOnInit() {
