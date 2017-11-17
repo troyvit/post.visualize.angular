@@ -4,8 +4,8 @@ import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
 	selector: 'content',
-	templateUrl: './plant-component.html',
-	styleUrls: ['./plant-component.css']
+	templateUrl: './plant.component.html',
+	styleUrls: ['./plant.component.css']
 })
 
 export class PlantCOmponent implements OnInit {
