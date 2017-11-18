@@ -8,7 +8,7 @@ import {ActivatedRoute, Params} from '@angular/router';
 	styleUrls: ['./plant.component.css']
 })
 
-export class PlantCOmponent implements OnInit {
+export class PlantComponent implements OnInit {
 	
     /* This web app only works with Google Chrome */
     checkBrowser(){
