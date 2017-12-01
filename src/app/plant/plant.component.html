@@ -1,0 +1,25 @@
+<h2>PLANT NAME</h2>
+<p></p>
+
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink id="link1">Graphs</button>
+        <clr-tab-content id="content1" *clrIfActive>
+        <!-- <plant-graph></plant-graph> -->
+        graph
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>Tables</button>
+        <clr-tab-content *clrIfActive="true">
+        <plant-table></plant-table>
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>Downloads</button>
+        <clr-tab-content *clrIfActive="true">
+        <!-- <plant-downloads></plant-downloads> -->
+        downloads
+        </clr-tab-content>
+    </clr-tab>
+</clr-tabs>

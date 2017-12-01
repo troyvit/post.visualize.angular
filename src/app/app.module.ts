@@ -4,18 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CoreModule } from './core/core.module';
 
+import { ClarityModule } from "clarity-angular";
+import { ClarityIcons } from 'clarity-icons';
+
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app/app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './nav/nav.component';
-
-import { HeroService } from './heroes/hero.service';
-import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroDetailComponent } from './heroes/hero-detail.component';
-import { HeroSearchComponent } from './heroes/hero-search.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { LoginComponent } from './login/login.component';
@@ -25,7 +22,10 @@ import { MembersComponent } from './members/members.component';
 
 import { environment } from '../environments/environment';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { NavlistComponent } from './nav/navlist/navlist.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { PlantComponent } from './plant/plant.component';
+import { DownloadsComponent } from './plant/downloads/downloads.component';
+import { TableComponent } from './plant/table/table.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
@@ -39,6 +39,7 @@ export const firebaseConfig = {
 @NgModule({
   imports: [
     BrowserModule,
+    ClarityModule.forRoot(),
     FormsModule,
     AppRoutingModule,
     HttpModule,
@@ -48,19 +49,18 @@ export const firebaseConfig = {
   ],
   declarations: [
     AppComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    HeroesComponent,
-    HeroDetailComponent,
     LoginComponent,
     EmailComponent,
     SignupComponent,
     MembersComponent,
     UserProfileComponent,
     NavComponent,
-    NavlistComponent,
+    SidenavComponent,
+    PlantComponent,
+    DownloadsComponent,
+    TableComponent,
   ],
-  providers: [HeroService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

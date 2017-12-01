@@ -19,11 +19,11 @@
 			"testTsconfig": "tsconfig.spec.json",
 			"prefix": "my",
 			"styles": [
-				"materialize-src/sass/materialize.scss"
+				"styles.css",
+				 "../node_modules/clarity-ui/clarity-ui.min.css"
 			],
 			"scripts":[
-				"../node_modules/jquery/dist/jquery.js",
-				"../node_modules/materialize-css/dist/js/materialize.js"
+				
 			],
 			"environmentSource": "environments/environment.ts",
 			"environments": {
