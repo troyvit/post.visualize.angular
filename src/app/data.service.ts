@@ -13,7 +13,7 @@ export class DataService {
 	nonDataStorageItems = ["plantName", "columnData"];
 
 	encodeFusionTableSQL(sqlString : string) {
-		var base = 'www.googleapis.com/fusiontables/v2/'
+		var base = "www.googleapis.com/fusiontables/v2/";
 		var initQuery = "query?sql=";
 		var url = base + initQuery + encodeURIComponent(sqlString) + this.apiKey;
 		return url;
@@ -26,9 +26,11 @@ export class DataService {
 			return plantData
 		}
 		// Loop through selected localstorage held json strings
-		for ( var i = 0; i < this.numReturnedDataPoints; ++i ) {
+		for ( var i = 0; i < localStorage.length; ++i){ //Changed to numReturnedDataPoints
+														// only for testing
+		//for ( var i = 0; i <this.numReturnedDataPoints; ++i){
 			var key = localStorage.key( i );
-			if (this.nonDataStorageItems.indexOf(key) == -1){//($.inArray(key, this.nonDataStorageItems) == -1) {
+			if (!(this.nonDataStorageItems.includes(key))){
 				var string = localStorage.getItem( localStorage.key( i ) );
 				plantData[i] = JSON.parse(string);
 			};
@@ -48,12 +50,12 @@ export class DataService {
 	}
 
 	getColumnIndex(columnString:string) {
-		var columnData = JSON.parse(localStorage.getItem('columnData'));
+		var columnData = JSON.parse(localStorage.getItem("columnData"));
 		return columnData.indexOf(columnString);
 	}
 
 	// TODO: Confirm rowArray and columnArray are all Strings
-	makeDictionary(rowArray:string[], columnArray:string[]) {
+	makeDictionary(rowArray:string[][], columnArray:string[]) {
 		var plantDataDictArray = [];
 		for ( var i = 0, rLen = rowArray.length; i < rLen; ++i ) {
 			plantDataDictArray[i] = {};
@@ -64,7 +66,7 @@ export class DataService {
 		return plantDataDictArray;
 	}
 
-	updatePlantData(onSuccess:any){ //:any
+	updatePlantData(onSuccess:any){ 
 		var plantName = this.getPlantName();
 		var query = "SELECT * FROM " + this.tableID + " WHERE plant=" + "'" +
 					plantName + "'" +
@@ -74,7 +76,7 @@ export class DataService {
 		console.log(queryURL);
 
 		// Get the JSON corresponding to the encoded sql string
-		$.getJSON(query, function(json:any) {	//:any
+		$.getJSON(query, function(json) {	//json:any
 			this.deleteOldPlantData();
 			this.save('columnData', JSON.stringify(json.columns));
 			if (json.rows == null){
@@ -87,20 +89,19 @@ export class DataService {
 			this.numReturnedDataPoints = plantDataDictArray.length;
 			this.insertManyPlantData(plantDataDictArray);
 			// Call the callback and use the retrieve function to get plantdata
-			onSuccess(this.retrieveAllPlantData(),plantName);
+			onSuccess(this.retrieveAllPlantData(), plantName);
 			$('#spinnerDestination').html("");
 		})
 		.fail(function() {
 			alert("Could not sync data. Data sync"
 					+ "was not successful and old data is preserved");
-			//alert(```Could not sync data.
-				//Data sync was not successful and old data is preserved.```)
 			$('#spinnerDestination').html("");
 		});
 	}
 
-	insertManyPlantData(plantData:any) {	//any
+	insertManyPlantData(plantData:any) {
 		for ( var i = 0, len = plantData.length; i < len; ++i ) {
+			var string= "test";
 			var timeStarted = plantData[i].timeStarted;
 			localStorage.setItem(timeStarted, JSON.stringify(plantData[i]));
 		}
@@ -108,9 +109,9 @@ export class DataService {
 	}
 
 	deleteOldPlantData(){
-		var plantName = this.load('plantName')
+		var plantName = this.load("plantName")
 		localStorage.clear();
-		this.save('plantName',plantName)
+		this.save("plantName",plantName)
 	}
 
 	getPlantName(){
