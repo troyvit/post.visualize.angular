@@ -26,9 +26,9 @@ export class DataService {
 			return plantData
 		}
 		// Loop through selected localstorage held json strings
-		for ( var i = 0; i < localStorage.length; ++i){ //Changed to numReturnedDataPoints
+		//for ( var i = 0; i < localStorage.length; ++i){ //Changed to localStorage.length
 														// only for testing
-		//for ( var i = 0; i <this.numReturnedDataPoints; ++i){
+		for ( var i = 0; i <this.numReturnedDataPoints; ++i){
 			var key = localStorage.key( i );
 			if (!(this.nonDataStorageItems.includes(key))){
 				var string = localStorage.getItem( localStorage.key( i ) );
@@ -66,7 +66,7 @@ export class DataService {
 		return plantDataDictArray;
 	}
 
-	updatePlantData(onSuccess:any){ 
+	updatePlantData(onSuccess:any){
 		var plantName = this.getPlantName();
 		var query = "SELECT * FROM " + this.tableID + " WHERE plant=" + "'" +
 					plantName + "'" +
