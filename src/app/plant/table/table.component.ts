@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {PlantComponent} from './../plant.component';
+import {Observable} from 'rxjs/Observable';
+import {DataService} from './../../data.service';
 
 @Component({
   selector: 'plant-table',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+    characters: any[];
+    columns: string[];
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit() {
+      this.columns = this.dataService.getColumns();
+      this.characters = this.dataService.retrieveAllPlantData();
   }
 
 }

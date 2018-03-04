@@ -36,6 +36,11 @@ export class DataService {
 		return plantData
 	}
 
+	getColumns(): string[] {
+		return ["timeStarted", "timeFinished", "plant", "purpose", "timeCollected", "flowRate", "flowUnits",
+	"coagulantDose", "rawWaterTurbidity", "settledWaterTurbidity", "filteredWaterTurbidity", "chlorineDose"]
+	}
+
 
 	// Load any string from local storage.
 	load(key:string) {
