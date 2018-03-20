@@ -27,6 +27,8 @@ import { PlantComponent } from './plant/plant.component';
 import { DownloadsComponent } from './plant/downloads/downloads.component';
 import { TableComponent } from './plant/table/table.component';
 
+import { DataService } from './data.service';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
   authDomain: "angular-tour-of-heroes-c1e0d.firebaseapp.com",
@@ -60,7 +62,7 @@ export const firebaseConfig = {
     DownloadsComponent,
     TableComponent,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
