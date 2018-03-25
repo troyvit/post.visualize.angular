@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import * as $ from "jquery";
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
+//import { CHARACTERS } from './plant/table/mock-data';
 
 @Injectable()
 export class DataService {
@@ -37,8 +41,10 @@ export class DataService {
 	}
 
 	getColumns(): string[] {
-		return ["timeStarted", "timeFinished", "plant", "purpose", "timeCollected", "flowRate", "flowUnits",
-	"coagulantDose", "rawWaterTurbidity", "settledWaterTurbidity", "filteredWaterTurbidity", "chlorineDose"]
+		return ["timeStarted", "timeFinished", "plant", "purpose",
+				"timeCollected", "flowRate", "flowUnits", "coagulantDose",
+				"rawWaterTurbidity", "settledWaterTurbidity",
+				"filteredWaterTurbidity", "chlorineDose"]
 	}
 
 

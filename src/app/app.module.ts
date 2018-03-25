@@ -26,6 +26,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { PlantComponent } from './plant/plant.component';
 import { DownloadsComponent } from './plant/downloads/downloads.component';
 import { TableComponent } from './plant/table/table.component';
+import { TableRowComponent } from './plant/table-row/table-row.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
@@ -59,6 +60,7 @@ export const firebaseConfig = {
     PlantComponent,
     DownloadsComponent,
     TableComponent,
+    TableRowComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

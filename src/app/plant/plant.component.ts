@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from './../data.service';
 
 @Component({
   selector: 'content',
@@ -8,7 +7,7 @@ import {DataService} from './../data.service';
 })
 export class PlantComponent implements OnInit {
 
-  constructor(private dataService: DataService) {
+  constructor() {
 
    }
 
