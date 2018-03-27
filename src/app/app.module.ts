@@ -28,6 +28,8 @@ import { DownloadsComponent } from './plant/downloads/downloads.component';
 import { TableComponent } from './plant/table/table.component';
 import { TableRowComponent } from './plant/table-row/table-row.component';
 
+import { DataService } from './data.service';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
   authDomain: "angular-tour-of-heroes-c1e0d.firebaseapp.com",
@@ -62,7 +64,7 @@ export const firebaseConfig = {
     TableComponent,
     TableRowComponent,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
