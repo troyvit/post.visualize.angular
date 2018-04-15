@@ -11,12 +11,11 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app/app.component';
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';////////////////
 import { NavComponent } from './nav/nav.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { LoginComponent } from './login/login.component';
-import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 
@@ -29,6 +28,8 @@ import { TableComponent } from './plant/table/table.component';
 import { TableRowComponent } from './plant/table-row/table-row.component';
 
 import { DataService } from './data.service';
+
+import { routes } from './app.router';  //////////////////
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
@@ -44,16 +45,16 @@ export const firebaseConfig = {
     BrowserModule,
     ClarityModule.forRoot(),
     FormsModule,
-    AppRoutingModule,
+    //AppRoutingModule,////////////////////////////////////
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 600 }),
     AngularFireModule.initializeApp(firebaseConfig),
     CoreModule,
+    routes, /////////////////
   ],
   declarations: [
     AppComponent,
     LoginComponent,
-    EmailComponent,
     SignupComponent,
     MembersComponent,
     UserProfileComponent,
