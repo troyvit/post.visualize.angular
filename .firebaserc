@@ -1,5 +1,6 @@
 {
   "projects": {
-    "dev": "angular-tour-of-heroes-c1e0d"
+    "dev": "post-visualize-development",
+    "prod": "post-visualize"
   }
 }
