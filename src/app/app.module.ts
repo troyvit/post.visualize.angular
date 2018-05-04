@@ -28,6 +28,7 @@ import { TableComponent } from './plant/table/table.component';
 import { TableRowComponent } from './plant/table-row/table-row.component';
 
 import { DataService } from './data.service';
+import { GraphComponent } from './plant/graph/graph.component';
 
 import { routes } from './app.router';  //////////////////
 
@@ -64,6 +65,7 @@ export const firebaseConfig = {
     DownloadsComponent,
     TableComponent,
     TableRowComponent,
+    GraphComponent,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

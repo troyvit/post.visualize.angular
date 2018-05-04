@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import * as _ from 'lodash';
+import * as Plotly from 'plotly.js';
+
+
 
 @Component({
   selector: 'content',
@@ -7,12 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlantComponent implements OnInit {
 
+
+
   constructor() {
 
    }
 
-  ngOnInit() {
+   ngOnInit() {
 
-  }
+   }
+
+
 
 }
