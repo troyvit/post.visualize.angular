@@ -11,7 +11,7 @@ import * as Plotly from 'plotly.js';
 })
 export class PlantComponent implements OnInit {
 
-
+  plant = localStorage.getItem("plantName")
 
   constructor() {
 

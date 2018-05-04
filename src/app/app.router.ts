@@ -3,11 +3,16 @@ import {Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { PlantComponent } from './plant/plant.component';
+import { AboutComponent } from './about/about.component';
+import { InstallationComponent } from './installation/installation.component'
 
 export const router: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  {path: 'plant', component: PlantComponent}
+  {path: 'plant', component: PlantComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'installation', component: InstallationComponent}
+
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

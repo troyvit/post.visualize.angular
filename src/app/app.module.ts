@@ -30,7 +30,9 @@ import { TableRowComponent } from './plant/table-row/table-row.component';
 import { DataService } from './data.service';
 import { GraphComponent } from './plant/graph/graph.component';
 
-import { routes } from './app.router';  //////////////////
+import { routes } from './app.router';
+import { AboutComponent } from './about/about.component';
+import { InstallationComponent } from './installation/installation.component';  //////////////////
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
@@ -66,6 +68,8 @@ export const firebaseConfig = {
     TableComponent,
     TableRowComponent,
     GraphComponent,
+    AboutComponent,
+    InstallationComponent,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
