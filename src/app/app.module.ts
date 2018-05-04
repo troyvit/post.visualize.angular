@@ -29,6 +29,7 @@ import { TableComponent } from './plant/table/table.component';
 import { TableRowComponent } from './plant/table-row/table-row.component';
 
 import { DataService } from './data.service';
+import { GraphComponent } from './plant/graph/graph.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
@@ -63,6 +64,7 @@ export const firebaseConfig = {
     DownloadsComponent,
     TableComponent,
     TableRowComponent,
+    GraphComponent,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

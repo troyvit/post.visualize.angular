@@ -4,8 +4,9 @@
 <clr-tabs>
     <clr-tab>
         <button clrTabLink id="link1">Graphs</button>
-        <!-- <plant-graph></plant-graph> -->
-        <div #plant></div>
+        <clr-tab-content *clrIfActive="true">
+        <plant-graph></plant-graph>
+        </clr-tab-content>
     </clr-tab>
     <clr-tab>
         <button clrTabLink>Tables</button>
