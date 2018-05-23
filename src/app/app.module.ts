@@ -34,14 +34,7 @@ import { routes } from './app.router';
 import { AboutComponent } from './about/about.component';
 import { InstallationComponent } from './installation/installation.component';  //////////////////
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyDyLLiWiT-06IRuzkthsVFizXiKTc0JmjE",
-  authDomain: "angular-tour-of-heroes-c1e0d.firebaseapp.com",
-  databaseURL: "https://angular-tour-of-heroes-c1e0d.firebaseio.com",
-  projectId: "angular-tour-of-heroes-c1e0d",
-  storageBucket: "angular-tour-of-heroes-c1e0d.appspot.com",
-  messagingSenderId: "213814794219"
-};
+export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   imports: [
