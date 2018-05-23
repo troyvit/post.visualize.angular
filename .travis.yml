@@ -1,6 +1,7 @@
 language: node_js
   - 10
 script:
+  - npm install
   - ng build --prod
 notifications:
   email:
