@@ -47,7 +47,6 @@ exports.postForm = functions.https.onRequest((req, res) => {
 
 
 // ############################# GMAIL REPORTS #################################
-const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
 // Configure the email transport using the default SMTP transport and a GMail account.
 // For Gmail, enable these:

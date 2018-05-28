@@ -1,6 +1,7 @@
 {
   "projects": {
     "dev": "post-visualize-development",
-    "prod": "post-visualize"
+    "prod": "post-visualize",
+    "default": "post-visualize-development"
   }
 }
