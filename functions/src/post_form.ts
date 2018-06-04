@@ -1,4 +1,4 @@
-exports.handler = (req,res) => {
+export function handler(req, res){
 // [END addMessageTrigger]
   // Grab the text parameter.
   const original = req.body;

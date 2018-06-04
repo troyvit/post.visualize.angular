@@ -11,8 +11,13 @@
   },
   "main": "lib/index.js",
   "dependencies": {
+    "@sendgrid/mail": "^6.2.1",
+    "cors": "^2.8.4",
+    "email-templates": "^4.0.1",
     "firebase-admin": "~5.12.1",
-    "firebase-functions": "^1.0.3"
+    "firebase-functions": "^1.0.3",
+    "nodemailer": "^4.6.5",
+    "pug": "^2.0.3"
   },
   "devDependencies": {
     "tslint": "^5.8.0",
