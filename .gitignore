@@ -50,7 +50,7 @@ Thumbs.db
 
 .ropeproject/
 .vscode/
-.runtimeaconfig.json
+.runtimeconfig.json
 
 # Ignore compiled templates
 src/**/*.map

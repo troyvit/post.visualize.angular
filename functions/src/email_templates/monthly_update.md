@@ -1,12 +1,12 @@
-# Water board Update {{plant name}}
+# {{plant name}} Water Board Update
 
 Dear {{User name}},
 
-Here is a plant summary of {{plant name}} for data between {{Data start date}} and {{Data end date}}. In total, we received **{{Number of data points}}**!
+Here is a plant summary of {{plant name}} for data between {{Data start date}} and {{Data end date}}. In total, we received **{{Number of data points}}** submissions!
 
-On average, operators were recording a data point every {{n points/Total collection time}. Our goal is a data point every hour, or approximately {{n points expected-n points total}} more than {{plant name}} already submits.
+On average, operators were recording the water data every {{n points/Total collection time}. Our goal is a data point every hour, or approximately {{n points expected-n points total}} more than {{plant name}} already submits.
 
-Congratulations, {{percent within norms Honduras}} of the data points report effluent water within Honduran drinking water regulations. The highest spike in raw water was {{max raw water}}, which was treated down to {{right after max raw water}}.
+{{percent within norms Honduras}} of the data points report effluent water within Honduran drinking water regulations. The highest spike in raw water was {{max raw water}}, which was treated down to {{right after max raw water}}.
 
 The following graph shows raw water, settled water and filtered water over the course of the month:
 
