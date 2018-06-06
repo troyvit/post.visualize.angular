@@ -7,10 +7,10 @@ sgMail.setApiKey(SENDGRID_API_KEY);
 
 export function monthlyUpdate () {
   const msg = {
-      to: "ethan.keller@gmail.com",
-      from: 'post.aguaclara@gmail.com',
+      to: "ethankelleralias@gmail.com",
+      from: 'updates@mail.aguaclarapost.org',
       subject:  'Hi!',
-      // text: `Hey ${toName}. You have a new follower!!! `,
+      //text: `Hey ${toName}. You have a new follower!!! `,
       // html: `<strong>Hey ${toName}. You have a new follower!!!</strong>`,
 
       // custom templates
