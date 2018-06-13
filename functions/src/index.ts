@@ -9,23 +9,12 @@ import * as functions from 'firebase-functions'
 import * as post_form from './post_form'
 import * as emails from './emails'
 
+
 // singleton initialization
 admin.initializeApp();
 
 
 exports.postForm = functions.https.onRequest((req, res) => post_form.handler)
 
-exports.sendUpdateEmail = functions.https.onRequest((req, res) => emails.monthlyUpdate())
-
-// function sendAllUsers() {
-// // List batch of users, 1000 at a time.
-// admin.auth().listUsers(1000)
-//   .then(function(listUsersResult) {
-//     listUsersResult.users.forEach(function(userRecord) {
-//       emails.sendUpdateEmail(userRecord.email, userRecord.displayName);;
-//     });
-//   })
-//   .catch(function(error) {
-//     console.log("Error listing users:", error);
-//   });
-// }
+exports.sendAllUsersMonthlyUpdate = functions.https.onRequest((req, res) => emails.sendAllUsersMonthlyUpdate())
+exports.sendWelcomeEmail = functions.auth.user().onCreate((user) => emails.welcomEmail(user))

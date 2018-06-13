@@ -10,6 +10,7 @@
 
 #functions
 /functions/node_modules
+/functions/post-visualize-development-key.json
 
 #firebase
 firebase-debug.log
