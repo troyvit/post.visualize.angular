@@ -13,6 +13,8 @@ export class PlantComponent implements OnInit {
 
   plant = localStorage.getItem("plantName")
 
+
+
   constructor() {
 
    }
