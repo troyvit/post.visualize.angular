@@ -12,7 +12,7 @@ export const router: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'plant', component: PlantComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'installation', component: InstallationComponent }
+  { path: 'installation', component: InstallationComponent },
   { path: 'plant-selector', component: PlantSelectorComponent}
 
 ];
