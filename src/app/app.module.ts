@@ -29,7 +29,8 @@ import { GraphComponent } from '../graph/graph.component';
 
 import { routes } from '../app.router';
 import { AboutComponent } from '../about/about.component';
-import { InstallationComponent } from '../installation/installation.component';  //////////////////
+import { InstallationComponent } from '../installation/installation.component';
+import { PlantSelectorComponent } from './plant-selector/plant-selector.component';  //////////////////
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -57,6 +58,7 @@ export const firebaseConfig = environment.firebaseConfig;
     GraphComponent,
     AboutComponent,
     InstallationComponent,
+    PlantSelectorComponent,
   ],
   bootstrap: [AppComponent]
 })
