@@ -23,19 +23,25 @@ export class LoginComponent implements OnInit {
   // }
 
   loginGoogle() {
-    if (this.auth.user){
-      alert("You are already logged in!", this.auth.user)
-    } else {
+    var firebase = require("firebase/app");
+    if (firebase.auth().currentUser){
+      this.auth.signOut()
+      document.getElementById("loginout").innerHTML = "Login With Google"
+    } else{
       this.auth.googleLogin()
+      document.getElementById("loginout").innerHTML = "Logout"
+    }
       // We want to log in with google
       // get information from firebase on whether or not user has registered plants
       // if not, immediately redirect the user by calling some redirect function
-    }
+    //}
   }
 
-  l() {
-
-  }
+  // logout() {
+  //   this.auth.signOut()
+  //   document.getElementById("loginout").innerHTML = "Login With Google"
+  //
+  // }
 
 
   ngOnInit() {

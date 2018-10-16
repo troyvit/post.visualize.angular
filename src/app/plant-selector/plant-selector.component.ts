@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../core/auth.service'
 
 @Component({
   selector: 'my-plant-selector',
@@ -7,20 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlantSelectorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth:AuthService) { }
 
   sendPlantData(){
-    var x = document.getElementById("selectorForm");
-    var i;
-    var plants = new Array();
-    for (i = 0; i < x.length ;i++) {
-      if (x.elements[i].checked == true){
-        plants.push(x.elements[i].name)
+    var firebase = require("firebase/app"); // <-- use this to see emailVerified == true
+    var user = firebase.auth().currentUser
+    var form = document.getElementsByTagName("FORM")[0];
+    var plantBoxes = form.getElementsByTagName("INPUT")
+    var plants = []
+
+    // fill plants with the checked plants
+    for (let plant of plantBoxes){
+      if (document.getElementById(plant.value).checked){
+        plants.push(plant.value)
       }
     }
-    console.log(plants)
-    // Code so far works, we now just want to send the data to firebase
 
+    console.log(user)
+    console.log("plants", user.plants)
+    this.auth.updateUserData(user, plants)
+    console.log(plants)
   }
 
   ngOnInit() {

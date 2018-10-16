@@ -11,6 +11,7 @@ interface User {
   photoURL?: string;
   displayName?: string;
   favoriteColor?: string;
+  plants?: string[];
 }
 @Injectable()
 export class AuthService {
@@ -38,20 +39,22 @@ export class AuthService {
         this.updateUserData(credential.user)
       })
   }
-  private updateUserData(user) {
+  private updateUserData(user, userPlants) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      plants: userPlants
+
     }
     return userRef.set(data)
   }
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-        this.router.navigate(['/']);
+        this.router.navigate(['login']);//(['/']);
     });
   }
 }
