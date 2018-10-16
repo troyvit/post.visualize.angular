@@ -45,6 +45,12 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    var firebase = require("firebase/app")
+    if (firebase.auth().currentUser){
+      document.getElementById("loginout").innerHTML = "Logout"
+    }else{
+      document.getElementById("loginout").innerHTML = "Logout"
+    }
   }
 
 }
