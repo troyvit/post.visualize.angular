@@ -31,6 +31,7 @@ export class AuthService {
   }
   googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider()
+    // this.router.navigate(['plant-selector']);  <--ge this to happen after google authenticates user
     return this.oAuthLogin(provider);
   }
   private oAuthLogin(provider) {
@@ -39,7 +40,7 @@ export class AuthService {
         this.updateUserData(credential.user)
       })
   }
-  private updateUserData(user, userPlants) {
+  public updateUserData(user, userPlants) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {

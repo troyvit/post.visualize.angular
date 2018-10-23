@@ -18,7 +18,7 @@ export class PlantSelectorComponent implements OnInit {
     var plants = []
 
     // fill plants with the checked plants
-    for (let plant of plantBoxes){
+    for (let plant of Array.from(plantBoxes)){
       if (document.getElementById(plant.value).checked){
         plants.push(plant.value)
       }
