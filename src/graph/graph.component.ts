@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 // import { ChartService} from '../chart.service'
 import * as _ from 'lodash'
-import * as Plotly from 'plotly.js'
+// import * as Plotly from 'plotly.js'
+import * as Plotly from 'plotly.js/dist/plotly.js';
+import {Config, Data, Layout} from 'plotly.js/dist/plotly.js';
 
 @Component({
   selector: 'plant-graph',

@@ -37,7 +37,7 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.updateUserData(credential.user, [])
+        this.updateUserData(credential.user, [])  //Need to remember this could erase plant data for user
       })
   }
   public updateUserData(user, userPlants) {

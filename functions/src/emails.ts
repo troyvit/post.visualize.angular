@@ -42,15 +42,17 @@ export function monthlyUpdate (user: admin.auth.UserRecord) {
 
 export function welcomEmail (user: admin.auth.UserRecord) {
   // Get user's firestore entry:
+  var em = user.email
+  var dn = user.displayName
   let user_firestore = admin.firestore().doc('users/vzXRhbY0GieY1jeP4V76nG7FrMk2')
   user_firestore.get().then(user => {
     const msg = {
-        to: user.email,
+        to: em, //user.email,
         from: 'updates@mail.aguaclarapost.org',
         templateId: 'fce24c48-06c7-480e-922b-ec96676a6418',
         substitutionWrappers: ['{{', '}}'],
         substitutions: {
-          name: user.displayName
+          name: dn //user.displayName
           // and other custom properties here
         }
     };
